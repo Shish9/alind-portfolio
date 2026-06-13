@@ -47,14 +47,6 @@ export const experience = [
     ],
   },
   {
-    year: "2022",
-    company: "Duhok Investment Division",
-    role: "Work Supervisor",
-    dates: "6/2022 - 8/2022",
-    icon: "clipboard",
-    bullets: ["Data entry", "Work supervision support"],
-  },
-  {
     year: "2023",
     company: "Mass Company",
     role: "Site Engineer",
@@ -108,14 +100,6 @@ export const projects = [
       "Involved in high-rise construction supervision and coordination of structural and finishing phases.",
     drawing: "tower",
     code: "PRJ-02 / HIGH-RISE",
-  },
-  {
-    title: "Construction Supervision",
-    subtitle: "Multiple Projects",
-    description:
-      "Experience in supervising structural works, concrete and reinforcement, inspections, and daily site operations.",
-    drawing: "structure",
-    code: "PRJ-03 / STRUCTURAL",
   },
 ];
 

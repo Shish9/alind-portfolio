@@ -59,39 +59,9 @@ function TowerDrawing() {
   );
 }
 
-function StructureDrawing() {
-  return (
-    <g {...g}>
-      <motion.path d="M16 150h208" variants={draw} custom={0} strokeWidth="1.8" />
-      {/* footings */}
-      <motion.path d="M36 150v-10h32v10M122 150v-10h32v10" variants={draw} custom={1} />
-      {/* columns with rebar */}
-      <motion.path d="M44 140V58h16v82M130 140V58h16v82" variants={draw} custom={2} strokeWidth="1.5" />
-      <motion.path d="M48 140V62M56 140V62M134 140V62M142 140V62" variants={draw} custom={3} strokeWidth="0.6" opacity="0.6" strokeDasharray="3 4" />
-      {/* slab + beam */}
-      <motion.path d="M24 58h180M24 44h180M24 44v14M204 44v14" variants={draw} custom={4} strokeWidth="1.5" />
-      {/* slab rebar */}
-      <motion.path d="M30 50h168" variants={draw} custom={5} strokeWidth="0.6" opacity="0.6" strokeDasharray="3 4" />
-      {/* stirrup ticks on beam */}
-      {[44, 68, 92, 116, 140, 164, 188].map((x, i) => (
-        <motion.path key={x} d={`M${x} 46v10`} variants={draw} custom={5.4 + i * 0.1} strokeWidth="0.6" opacity="0.6" />
-      ))}
-      {/* projecting starter bars */}
-      <motion.path d="M186 140V36M194 140V30" variants={draw} custom={6} strokeWidth="1.2" />
-      <motion.path d="M186 36c0-5 8-5 8-6M194 30c0-4 6-4 6-5" variants={draw} custom={6.4} strokeWidth="1" />
-      {/* small crane above the slab */}
-      <motion.path d="M218 150V22m0 0-5 9m5-9 5 9M212 31h-92m98-9 14 9h-14M120 31v14" variants={draw} custom={6.8} strokeWidth="0.9" opacity="0.85" />
-      <motion.path d="M120 45c-3 1-3 5 0 6 3-1 3-5 0-6Z" variants={draw} custom={7.2} strokeWidth="0.8" opacity="0.85" />
-      {/* dimension */}
-      <motion.path d="M44 160h102M44 156v8M146 156v8" variants={draw} custom={7} strokeWidth="0.7" opacity="0.7" />
-    </g>
-  );
-}
-
 const drawings = {
   villa: VillaDrawing,
   tower: TowerDrawing,
-  structure: StructureDrawing,
 };
 
 export default function ProjectCards() {
@@ -103,7 +73,7 @@ export default function ProjectCards() {
           lead="Selected works — from luxury villas to high-rise towers, drawn straight from the site."
         />
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
           {projects.map((p, i) => {
             const Drawing = drawings[p.drawing];
             return (
